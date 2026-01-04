@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIME BUILT Co., Ltd. - บริษัทรับก่อสร้างมืออาชีพ</title>
+    <meta name="description" content="PRIME BUILT Co., Ltd. - บริษัทรับก่อสร้างมืออาชีพ ด้วยประสบการณ์กว่า 15 ปี ในงานก่อสร้างทุกประเภท เน้นคุณภาพ ความปลอดภัย และตรงเวลา">
+    <meta name="keywords" content="บริษัทก่อสร้าง,รับสร้างบ้าน,รับเหมาก่อสร้าง,ตกแต่งภายใน,รีโนเวทบ้าน,ก่อสร้างอาคาร">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0a3d62;
+            --secondary-color: #3c6382;
+            --accent-color: #f6b93b;
+            --light-color: #f8f9fa;
+            --dark-color: #1e272e;
+            --text-color: #333;
+            --text-light: #555;
+            --gray-color: #dfe6e9;
+            --transition: all 0.4s ease;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --shadow-strong: 0 10px 30px rgba(0, 0, 0, 0.2);
+            --radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Kanit', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent-color);
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            border: none;
+            border-radius: var(--radius);
+            font-family: 'Kanit', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn:hover {
+            background-color: #e6a91f;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(246, 185, 59, 0.3);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        header.scrolled {
+            padding: 5px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-family: 'Kanit', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(rgba(10, 61, 98, 0.85), rgba(10, 61, 98, 0.9));
+            color: white;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            filter: brightness(0.8);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            z-index: 2;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero .btn {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            font-size: 1.2rem;
+            padding: 16px 40px;
+        }
+
+        /* 3D Rotating Octagon with Tilt Effect */
+        .octagon-3d-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            z-index: 1;
+            perspective: 1000px;
+        }
+
+        .octagon-3d {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: rotate3d 20s infinite linear;
+            transition: transform 0.1s;
+        }
+
+        @keyframes rotate3d {
+            0% {
+                transform: rotateY(0deg) rotateX(10deg);
+            }
+            100% {
+                transform: rotateY(360deg) rotateX(10deg);
+            }
+        }
+
+        .octagon-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            backface-visibility: visible;
+            box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.2);
+        }
+
+        .face-front {
+            transform: translateZ(200px);
+        }
+
+        .face-back {
+            transform: translateZ(-200px) rotateY(180deg);
+        }
+
+        .face-right {
+            transform: rotateY(90deg) translateZ(200px);
+        }
+
+        .face-left {
+            transform: rotateY(-90deg) translateZ(200px);
+        }
+
+        .face-top {
+            transform: rotateX(90deg) translateZ(200px);
+        }
+
+        .face-bottom {
+            transform: rotateX(-90deg) translateZ(200px);
+        }
+
+        /* About Section with Layered Effect */
+        .about {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-bg-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(246, 185, 59, 0.05) 0%, rgba(10, 61, 98, 0.05) 100%);
+            clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+            z-index: 0;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-strong);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: var(--transition);
+        }
+
+        .about-image:hover {
+            transform: perspective(1000px) rotateY(0deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: #f8f9fa;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-bg-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat fixed;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        .service-card.animated {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1) rotate(1deg);
+        }
+
+        .service-content {
+            padding: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-content h3 {
+            margin-bottom: 15px;
+        }
+
+        /* Projects Section with Parallax */
+        .projects {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .projects-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80') center/cover no-repeat;
+            background-attachment: fixed;
+            opacity: 0.1;
+            z-index: 0;
+            transform: translateY(0);
+        }
+
+        .projects-slider {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+            z-index: 1;
+        }
+
+        .projects-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .project-slide {
+            min-width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .project-image {
+            flex: 1;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-strong);
+            transform: perspective(1000px) rotateY(10deg);
+            transition: var(--transition);
+        }
+
+        .project-slide.active .project-image {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .project-slide.active .project-image img {
+            transform: scale(1.02);
+        }
+
+        .project-info {
+            flex: 1;
+            transform: translateX(50px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .project-slide.active .project-info {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .project-info h3 {
+            color: var(--primary-color);
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 15px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .slider-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .slider-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            transform: scale(1.1);
+        }
+
+        /* Contact Section with Layered Forms */
+        .contact {
+            background-color: var(--primary-color);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-bg-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(246, 185, 59, 0.1) 30%, rgba(246, 185, 59, 0.1) 70%, transparent 70%),
+                linear-gradient(-45deg, transparent 30%, rgba(246, 185, 59, 0.05) 30%, rgba(246, 185, 59, 0.05) 70%, transparent 70%);
+            z-index: 0;
+        }
+
+        .contact .section-title h2 {
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact .section-title h2::after {
+            background-color: var(--accent-color);
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            flex: 1;
+            transform: translateX(-50px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .contact-info.animated {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .contact-info p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            transition: var(--transition);
+            transform: translateX(-20px);
+            opacity: 0;
+        }
+
+        .contact-item.animated {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .contact-item:nth-child(1) { transition-delay: 0.1s; }
+        .contact-item:nth-child(2) { transition-delay: 0.2s; }
+        .contact-item:nth-child(3) { transition-delay: 0.3s; }
+        .contact-item:nth-child(4) { transition-delay: 0.4s; }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-right: 15px;
+            width: 30px;
+        }
+
+        .contact-form {
+            flex: 1;
+            transform: translateX(50px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .contact-form.animated {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            font-family: 'Kanit', sans-serif;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 15px;
+            border: none;
+            border-radius: var(--radius);
+            font-family: 'Sarabun', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 2px solid transparent;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(246, 185, 59, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-bg-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 40%, rgba(246, 185, 59, 0.05) 40%, rgba(246, 185, 59, 0.05) 60%, transparent 60%);
+            z-index: 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-logo h2 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo h2::after {
+            display: none;
+        }
+
+        .footer-links h3,
+        .footer-social h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+            transform: translateY(10px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .footer-links li.animated {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .footer-links li:nth-child(1) { transition-delay: 0.1s; }
+        .footer-links li:nth-child(2) { transition-delay: 0.2s; }
+        .footer-links li:nth-child(3) { transition-delay: 0.3s; }
+        .footer-links li:nth-child(4) { transition-delay: 0.4s; }
+        .footer-links li:nth-child(5) { transition-delay: 0.5s; }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        .social-icons a.animated {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .social-icons a:nth-child(1) { transition-delay: 0.1s; }
+        .social-icons a:nth-child(2) { transition-delay: 0.2s; }
+        .social-icons a:nth-child(3) { transition-delay: 0.3s; }
+        .social-icons a:nth-child(4) { transition-delay: 0.4s; }
+        .social-icons a:nth-child(5) { transition-delay: 0.5s; }
+
+        .social-icons a:hover {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+            opacity: 0.05;
+            z-index: 0;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .floating-element:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            top: 20%;
+            right: 10%;
+            width: 120px;
+            height: 120px;
+            animation-delay: 3s;
+        }
+
+        .floating-element:nth-child(3) {
+            bottom: 15%;
+            left: 15%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 6s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .about-content,
+            .project-slide,
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .project-slide {
+                flex-direction: column-reverse;
+            }
+            
+            .octagon-3d-container {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .floating-element {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                backdrop-filter: blur(10px);
+                z-index: 1000;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .octagon-3d-container {
+                width: 250px;
+                height: 250px;
+            }
+
+            .projects-bg {
+                background-attachment: scroll;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .octagon-3d-container {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <h1>PRIME<span>BUILT</span></h1>
+            </div>
+            <div class="mobile-toggle" id="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home">หน้าหลัก</a></li>
+                <li><a href="#about">เกี่ยวกับเรา</a></li>
+                <li><a href="#services">บริการของเรา</a></li>
+                <li><a href="#projects">ผลงานของเรา</a></li>
+                <li><a href="#contact">ติดต่อเรา</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="ก่อสร้าง">
+        </div>
+        <div class="octagon-3d-container">
+            <div class="octagon-3d" id="octagon3d">
+                <div class="octagon-face face-front"></div>
+                <div class="octagon-face face-back"></div>
+                <div class="octagon-face face-right"></div>
+                <div class="octagon-face face-left"></div>
+                <div class="octagon-face face-top"></div>
+                <div class="octagon-face face-bottom"></div>
+            </div>
+        </div>
+        <div class="container hero-content">
+            <h1>PRIME BUILT Co., Ltd.</h1>
+            <p>ผู้นำด้านการก่อสร้างครบวงจร ด้วยประสบการณ์กว่า 15 ปี ในงานก่อสร้างทุกประเภท เน้นคุณภาพ ความปลอดภัย และตรงเวลา</p>
+            <a href="#contact" class="btn">ขอใบเสนอราคา</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-bg-layer"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>เกี่ยวกับเรา</h2>
+                <p>เราคือบริษัทรับเหมาก่อสร้างที่มีความเชี่ยวชาญและประสบการณ์ยาวนาน</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>ความเป็นมืออาชีพที่คุณไว้วางใจได้</h3>
+                    <p>PRIME BUILT Co., Ltd. ก่อตั้งขึ้นเมื่อปี 2008 ด้วยความมุ่งมั่นที่จะให้บริการงานก่อสร้างที่มีคุณภาพสูง มาตรฐานความปลอดภัย และการบริการที่ใส่ใจในทุกรายละเอียด</p>
+                    <p>เราให้บริการงานก่อสร้างครบวงจร ทั้งงานโครงสร้าง งานสถาปัตยกรรม งานระบบวิศวกรรม และงานตกแต่งภายใน ด้วยทีมงานมืออาชีพที่มีความเชี่ยวชาญเฉพาะด้าน</p>
+                    <p>เราให้ความสำคัญกับความพึงพอใจของลูกค้าเป็นหลัก โดยคำนึงถึงคุณภาพงาน ระยะเวลาในการส่งมอบงาน และการควบคุมงบประมาณให้เป็นไปตามที่ตกลงกันไว้</p>
+                    <a href="#contact" class="btn">ติดต่อเรา</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="ทีมงาน PRIME BUILT">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="services-bg-layer"></div>
+        <div class="floating-element"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>บริการของเรา</h2>
+                <p>เรามีบริการครบวงจรเพื่อตอบโจทย์ความต้องการทุกประเภท</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="ก่อสร้างบ้านและอาคาร">
+                    </div>
+                    <div class="service-content">
+                        <h3>ก่อสร้างบ้านและอาคาร</h3>
+                        <p>รับสร้างบ้านเดี่ยว ทาวน์โฮม คอนโดมิเนียม อาคารพาณิชย์ และอาคารสำนักงาน ตามแบบที่ลูกค้าต้องการ</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="รีโนเวทและต่อเติม">
+                    </div>
+                    <div class="service-content">
+                        <h3>รีโนเวทและต่อเติม</h3>
+                        <p>ให้บริการงานปรับปรุงซ่อมแซม ต่อเติมอาคาร และรีโนเวททั้งภายในและภายนอก ด้วยวัสดุคุณภาพสูง</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="ตกแต่งภายใน">
+                    </div>
+                    <div class="service-content">
+                        <h3>ตกแต่งภายใน</h3>
+                        <p>ออกแบบและตกแต่งภายในด้วยสไตล์ที่ทันสมัย ใช้วัสดุคุณภาพสูงและทีมช่างฝีมือดี</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="projects-bg"></div>
+        <div class="floating-element"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>ผลงานของเรา</h2>
+                <p>โครงการที่เราภาคภูมิใจและได้รับการยอมรับจากลูกค้า</p>
+            </div>
+            <div class="projects-slider">
+                <div class="projects-container" id="projects-container">
+                    <div class="project-slide active">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="โครงการบ้านเดี่ยวโมเดิร์น">
+                        </div>
+                        <div class="project-info">
+                            <h3>บ้านเดี่ยวสไตล์โมเดิร์น</h3>
+                            <p><strong>สถานที่:</strong> บางพลี, สมุทรปราการ</p>
+                            <p><strong>ระยะเวลา:</strong> 8 เดือน</p>
+                            <p><strong>รายละเอียด:</strong> บ้านเดี่ยว 2 ชั้น พื้นที่ใช้สอย 350 ตร.ม. ออกแบบด้วยสไตล์โมเดิร์น ใช้วัสดุคุณภาพสูง พร้อมระบบ Smart Home</p>
+                            <p>โครงการนี้เราเน้นการออกแบบที่ทันสมัยและฟังก์ชันการใช้งานครบถ้วน ใช้วัสดุที่ทนทานและปลอดภัย ภายใต้งบประมาณที่กำหนด</p>
+                        </div>
+                    </div>
+                    <div class="project-slide">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="โครงการอาคารสำนักงาน">
+                        </div>
+                        <div class="project-info">
+                            <h3>อาคารสำนักงาน 5 ชั้น</h3>
+                            <p><strong>สถานที่:</strong> สาทร, กรุงเทพฯ</p>
+                            <p><strong>ระยะเวลา:</strong> 14 เดือน</p>
+                            <p><strong>รายละเอียด:</strong> อาคารสำนักงาน 5 ชั้น พร้อมที่จอดรถใต้ดิน 2 ชั้น ออกแบบเพื่อประหยัดพลังงานและเป็นมิตรกับสิ่งแวดล้อม</p>
+                            <p>โครงการอาคารสำนักงานนี้เราออกแบบโดยคำนึงถึงความปลอดภัยและการประหยัดพลังงานเป็นหลัก ใช้วัสดุที่ช่วยลดการปล่อยคาร์บอน</p>
+                        </div>
+                    </div>
+                    <div class="project-slide">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="โครงการรีโนเวทคอนโดมิเนียม">
+                        </div>
+                        <div class="project-info">
+                            <h3>รีโนเวทคอนโดมิเนียม</h3>
+                            <p><strong>สถานที่:</strong> สุขุมวิท, กรุงเทพฯ</p>
+                            <p><strong>ระยะเวลา:</strong> 3 เดือน</p>
+                            <p><strong>รายละเอียด:</strong> ปรับปรุงคอนโดมิเนียมขนาด 120 ตร.ม. จากสไตล์คลาสสิกเป็นโมเดิร์นลักซ์ชัวรี่ พร้อมระบบเสียงและแสงอัจฉริยะ</p>
+                            <p>งานรีโนเวทครั้งนี้เราให้ความสำคัญกับการออกแบบพื้นที่ใช้สอยให้เหมาะสมและสวยงามทันสมัย ใช้วัสดุระดับพรีเมียมทุกส่วน</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-bg-layer"></div>
+        <div class="floating-element"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>ติดต่อเรา</h2>
+                <p>พร้อมให้คำปรึกษาและบริการทุกความต้องการด้านการก่อสร้าง</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>ข้อมูลติดต่อ</h3>
+                    <p>เราพร้อมให้บริการและคำปรึกษาฟรี โดยวิศวกรและสถาปนิกผู้ชำนาญการ</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>ที่อยู่</h4>
+                                <p>99/9 หมู่ 6 ถนนสุขุมวิท ต.บางพลี อ.บางพลี จ.สมุทรปราการ 10540</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>โทรศัพท์</h4>
+                                <p>02-123-4567, 089-123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>อีเมล</h4>
+                                <p>info@primebuilt.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>เวลาทำการ</h4>
+                                <p>จันทร์ - ศุกร์: 8:00 - 17:00 น.<br>เสาร์: 8:00 - 12:00 น.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>ส่งข้อความถึงเรา</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">ชื่อ - นามสกุล</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">เบอร์โทรศัพท์</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">อีเมล</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="project">ประเภทโครงการ</label>
+                            <input type="text" id="project" name="project" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">รายละเอียดโครงการ</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">ส่งข้อความ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bg-layer"></div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>PRIME<span>BUILT</span></h2>
+                    <p>ผู้นำด้านการก่อสร้างครบวงจร ด้วยความเชี่ยวชาญและประสบการณ์กว่า 15 ปี</p>
+                </div>
+                <div class="footer-links">
+                    <h3>ลิงก์ด่วน</h3>
+                    <ul>
+                        <li><a href="#home">หน้าหลัก</a></li>
+                        <li><a href="#about">เกี่ยวกับเรา</a></li>
+                        <li><a href="#services">บริการของเรา</a></li>
+                        <li><a href="#projects">ผลงานของเรา</a></li>
+                        <li><a href="#contact">ติดต่อเรา</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>ติดตามเรา</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-line"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 PRIME BUILT Co., Ltd. สงวนลิขสิทธิ์ทุกประการ.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // 3D Octagon Mouse Tilt Effect
+        const octagon3d = document.getElementById('octagon3d');
+        document.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            octagon3d.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+        
+        // Reset 3D effect when mouse leaves the window
+        document.addEventListener('mouseleave', () => {
+            octagon3d.style.transform = 'rotateY(0deg) rotateX(0deg)';
+        });
+        
+        // Projects Slider
+        const projectsContainer = document.getElementById('projects-container');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const projectSlides = document.querySelectorAll('.project-slide');
+        let currentSlide = 0;
+        
+        function updateSlider() {
+            projectsContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update active class for animation
+            projectSlides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+        }
+        
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % projectSlides.length;
+            updateSlider();
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + projectSlides.length) % projectSlides.length;
+            updateSlider();
+        });
+        
+        // Auto slide every 5 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % projectSlides.length;
+            updateSlider();
+        }, 5000);
+        
+        // Parallax Effect for Projects Background
+        window.addEventListener('scroll', () => {
+            const projectsBg = document.querySelector('.projects-bg');
+            if (projectsBg) {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * 0.3;
+                projectsBg.style.transform = `translateY(${rate}px)`;
+            }
+        });
+        
+        // Animate elements on scroll
+        function animateOnScroll() {
+            // Animate service cards
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (cardPosition < screenPosition) {
+                    card.classList.add('animated');
+                }
+            });
+            
+            // Animate contact elements
+            const contactInfo = document.querySelector('.contact-info');
+            const contactForm = document.querySelector('.contact-form');
+            const contactItems = document.querySelectorAll('.contact-item');
+            const footerLinks = document.querySelectorAll('.footer-links li');
+            const socialIcons = document.querySelectorAll('.social-icons a');
+            
+            if (contactInfo) {
+                const contactPosition = contactInfo.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.5;
+                
+                if (contactPosition < screenPosition) {
+                    contactInfo.classList.add('animated');
+                    contactForm.classList.add('animated');
+                    
+                    contactItems.forEach(item => {
+                        item.classList.add('animated');
+                    });
+                }
+            }
+            
+            // Animate footer elements
+            const footerPosition = document.querySelector('footer').getBoundingClientRect().top;
+            const footerScreenPosition = window.innerHeight / 1.2;
+            
+            if (footerPosition < footerScreenPosition) {
+                footerLinks.forEach((link, index) => {
+                    setTimeout(() => {
+                        link.classList.add('animated');
+                    }, index * 100);
+                });
+                
+                socialIcons.forEach((icon, index) => {
+                    setTimeout(() => {
+                        icon.classList.add('animated');
+                    }, index * 100);
+                });
+            }
+        }
+        
+        window.addEventListener('scroll', animateOnScroll);
+        // Initial animation check
+        animateOnScroll();
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple form validation
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            
+            if (name && phone && email) {
+                alert('ขอบคุณสำหรับการติดต่อเรา! เราจะตอบกลับคุณโดยเร็วที่สุด');
+                this.reset();
+            } else {
+                alert('กรุณากรอกข้อมูลให้ครบถ้วน');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
