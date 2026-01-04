@@ -382,7 +382,7 @@
             transform: rotateX(-90deg) translateZ(200px);
         }
 
-        /* About Section with Layered Effect */
+        /* About Section with Layered Effect - ปรับเป็น 3D Cube */
         .about {
             position: relative;
             overflow: hidden;
@@ -427,29 +427,97 @@
             text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
         }
 
-        .about-image {
+        /* 3D Cube for About Section */
+        .cube-3d-container {
             flex: 1;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-strong);
-            transform: perspective(1000px) rotateY(-10deg);
-            transition: var(--transition);
-        }
-
-        .about-image:hover {
-            transform: perspective(1000px) rotateY(0deg) scale(1.03);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .about-image img {
+            position: relative;
             width: 100%;
-            height: auto;
-            display: block;
-            transition: var(--transition);
+            height: 400px;
+            perspective: 1200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .about-image:hover img {
-            transform: scale(1.05);
+        .cube-3d {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d;
+            animation: rotateCube 20s infinite linear;
+            transition: transform 0.5s ease;
+        }
+
+        @keyframes rotateCube {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            25% {
+                transform: rotateX(20deg) rotateY(90deg);
+            }
+            50% {
+                transform: rotateX(0deg) rotateY(180deg);
+            }
+            75% {
+                transform: rotateX(-20deg) rotateY(270deg);
+            }
+            100% {
+                transform: rotateX(0deg) rotateY(360deg);
+            }
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .cube-face img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cube-face-front {
+            transform: translateZ(150px);
+            background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+        }
+
+        .cube-face-back {
+            transform: rotateY(180deg) translateZ(150px);
+            background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+        }
+
+        .cube-face-right {
+            transform: rotateY(90deg) translateZ(150px);
+            background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
+        }
+
+        .cube-face-left {
+            transform: rotateY(-90deg) translateZ(150px);
+            background-image: url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+        }
+
+        .cube-face-top {
+            transform: rotateX(90deg) translateZ(150px);
+            background-image: url('https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+        }
+
+        .cube-face-bottom {
+            transform: rotateX(-90deg) translateZ(150px);
+            background-image: url('https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+        }
+
+        .cube-3d:hover {
+            animation-play-state: paused;
         }
 
         /* Services Section */
@@ -830,7 +898,7 @@
             box-shadow: 0 0 0 3px rgba(246, 185, 59, 0.2), 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Footer */
+        /* Footer - ปรับลิงก์โซเชียลไม่มีขีดเส้นใต้ */
         footer {
             background-color: var(--dark-color);
             color: white;
@@ -910,7 +978,7 @@
 
         .footer-links a {
             color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
+            text-decoration: none; /* เอาขีดเส้นใต้ออก */
             transition: var(--transition);
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
@@ -940,6 +1008,7 @@
             transform: translateY(20px);
             opacity: 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            text-decoration: none; /* เอาขีดเส้นใต้ออก */
         }
 
         .social-icons a.animated {
@@ -958,6 +1027,7 @@
             color: var(--dark-color);
             transform: translateY(-5px) rotate(10deg);
             box-shadow: 0 5px 15px rgba(246, 185, 59, 0.3);
+            text-decoration: none; /* เอาขีดเส้นใต้ออก */
         }
 
         .copyright {
@@ -1101,6 +1171,44 @@
                 height: 300px;
             }
             
+            .cube-3d-container {
+                height: 300px;
+            }
+            
+            .cube-3d {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .cube-face {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .cube-face-front {
+                transform: translateZ(125px);
+            }
+            
+            .cube-face-back {
+                transform: rotateY(180deg) translateZ(125px);
+            }
+            
+            .cube-face-right {
+                transform: rotateY(90deg) translateZ(125px);
+            }
+            
+            .cube-face-left {
+                transform: rotateY(-90deg) translateZ(125px);
+            }
+            
+            .cube-face-top {
+                transform: rotateX(90deg) translateZ(125px);
+            }
+            
+            .cube-face-bottom {
+                transform: rotateX(-90deg) translateZ(125px);
+            }
+            
             .hero h1 {
                 font-size: 2.8rem;
             }
@@ -1159,6 +1267,44 @@
                 width: 250px;
                 height: 250px;
             }
+            
+            .cube-3d-container {
+                height: 250px;
+            }
+            
+            .cube-3d {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .cube-face {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .cube-face-front {
+                transform: translateZ(100px);
+            }
+            
+            .cube-face-back {
+                transform: rotateY(180deg) translateZ(100px);
+            }
+            
+            .cube-face-right {
+                transform: rotateY(90deg) translateZ(100px);
+            }
+            
+            .cube-face-left {
+                transform: rotateY(-90deg) translateZ(100px);
+            }
+            
+            .cube-face-top {
+                transform: rotateX(90deg) translateZ(100px);
+            }
+            
+            .cube-face-bottom {
+                transform: rotateX(-90deg) translateZ(100px);
+            }
 
             .projects-bg {
                 background-attachment: scroll;
@@ -1189,6 +1335,44 @@
             .octagon-3d-container {
                 width: 200px;
                 height: 200px;
+            }
+            
+            .cube-3d-container {
+                height: 200px;
+            }
+            
+            .cube-3d {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .cube-face {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .cube-face-front {
+                transform: translateZ(75px);
+            }
+            
+            .cube-face-back {
+                transform: rotateY(180deg) translateZ(75px);
+            }
+            
+            .cube-face-right {
+                transform: rotateY(90deg) translateZ(75px);
+            }
+            
+            .cube-face-left {
+                transform: rotateY(-90deg) translateZ(75px);
+            }
+            
+            .cube-face-top {
+                transform: rotateX(90deg) translateZ(75px);
+            }
+            
+            .cube-face-bottom {
+                transform: rotateX(-90deg) translateZ(75px);
             }
         }
     </style>
@@ -1257,8 +1441,16 @@
                     <p>เราให้ความสำคัญกับความพึงพอใจของลูกค้าเป็นหลัก โดยคำนึงถึงคุณภาพงาน ระยะเวลาในการส่งมอบงาน และการควบคุมงบประมาณให้เป็นไปตามที่ตกลงกันไว้</p>
                     <a href="#contact" class="btn">ติดต่อเรา</a>
                 </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="ทีมงาน PRIME BUILT">
+                <!-- เปลี่ยนเป็น 3D Cube แทนรูปภาพ -->
+                <div class="cube-3d-container">
+                    <div class="cube-3d">
+                        <div class="cube-face cube-face-front"></div>
+                        <div class="cube-face cube-face-back"></div>
+                        <div class="cube-face cube-face-right"></div>
+                        <div class="cube-face cube-face-left"></div>
+                        <div class="cube-face cube-face-top"></div>
+                        <div class="cube-face cube-face-bottom"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1457,11 +1649,11 @@
                 <div class="footer-social">
                     <h3>ติดตามเรา</h3>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-line"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-line"></i></a>
                     </div>
                 </div>
             </div>
@@ -1562,6 +1754,38 @@
         document.addEventListener('mouseleave', () => {
             octagon3d.style.transform = 'rotateY(0deg) rotateX(0deg)';
         });
+        
+        // 3D Cube Mouse Tilt Effect
+        const cube3d = document.querySelector('.cube-3d');
+        if (cube3d) {
+            document.addEventListener('mousemove', (e) => {
+                const cubeContainer = document.querySelector('.cube-3d-container');
+                if (cubeContainer) {
+                    const rect = cubeContainer.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+                    
+                    const xAxis = (centerX - e.pageX) / 50;
+                    const yAxis = (centerY - e.pageY) / 50;
+                    
+                    cube3d.style.transform = `rotateX(${yAxis}deg) rotateY(${xAxis}deg)`;
+                }
+            });
+            
+            // Reset cube position when mouse leaves
+            document.addEventListener('mouseleave', () => {
+                cube3d.style.transform = 'rotateX(0deg) rotateY(0deg)';
+            });
+            
+            // Pause animation on hover
+            cube3d.addEventListener('mouseenter', () => {
+                cube3d.style.animationPlayState = 'paused';
+            });
+            
+            cube3d.addEventListener('mouseleave', () => {
+                cube3d.style.animationPlayState = 'running';
+            });
+        }
         
         // Projects Slider
         const projectsContainer = document.getElementById('projects-container');
@@ -1723,6 +1947,13 @@
                 const glowSize = 20 + intensity * 10;
                 heroTitle.style.textShadow = `0 ${shadowSize}px 15px rgba(0, 0, 0, ${0.5 + intensity * 0.1}), 0 0 ${glowSize}px rgba(246, 185, 59, ${0.3 + intensity * 0.2})`;
             }
+        });
+        
+        // Remove underline from social links on hover
+        document.querySelectorAll('.social-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.textDecoration = 'none';
+            });
         });
     </script>
 </body>
